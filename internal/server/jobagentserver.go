@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"github.com/AdminAce-coder/jobAgent/internal/logic"
-	"github.com/AdminAce-coder/jobAgent/internal/svc"
-	"github.com/AdminAce-coder/jobAgent/pb/jobAgent"
+	"github.com/AdminAce-coder/JobAgent/internal/logic"
+	"github.com/AdminAce-coder/JobAgent/internal/svc"
+	"github.com/AdminAce-coder/JobAgent/pb/jobAgent"
 )
 
 type JobAgentServer struct {

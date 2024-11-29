@@ -6,7 +6,7 @@ package jobagentclient
 import (
 	"context"
 
-	"github.com/AdminAce-coder/jobAgent/pb/jobAgent"
+	"github.com/AdminAce-coder/JobAgent/pb/jobAgent"
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
 )

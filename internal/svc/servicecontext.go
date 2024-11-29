@@ -1,6 +1,6 @@
 package svc
 
-import "github.com/AdminAce-coder/jobAgent/internal/config"
+import "github.com/AdminAce-coder/JobAgent/internal/config"
 
 type ServiceContext struct {
 	Config config.Config

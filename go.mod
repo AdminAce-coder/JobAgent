@@ -1,4 +1,4 @@
-module github.com/AdminAce-coder/jobAgent
+module github.com/AdminAce-coder/JobAgent
 
 go 1.22.7
 

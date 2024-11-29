@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/AdminAce-coder/jobAgent/internal/svc"
-	"github.com/AdminAce-coder/jobAgent/pb/jobAgent"
+	"github.com/AdminAce-coder/JobAgent/internal/svc"
+	"github.com/AdminAce-coder/JobAgent/pb/jobAgent"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
