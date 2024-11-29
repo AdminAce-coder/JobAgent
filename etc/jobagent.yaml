@@ -1,0 +1,6 @@
+Name: jobagent.rpc
+ListenOn: 0.0.0.0:8787
+Etcd:
+  Hosts:
+  - 1.92.75.225:2379
+  Key: jobagent.rpc

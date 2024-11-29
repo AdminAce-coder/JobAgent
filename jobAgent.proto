@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package jobAgent;
+option go_package="./jobAgent";
+
+message Request {
+  string command = 1;
+}
+
+message Response {
+  string result = 1;
+}
+
+service JobAgent {
+  rpc DoJob(Request) returns(Response);
+}
