@@ -6,6 +6,7 @@ toolchain go1.22.9
 
 require (
 	github.com/zeromicro/go-zero v1.7.4
+	golang.org/x/crypto v0.29.0
 	google.golang.org/grpc v1.68.0
 	google.golang.org/protobuf v1.35.2
 )
