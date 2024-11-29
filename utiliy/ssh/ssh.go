@@ -3,8 +3,11 @@ package ssh
 import (
 	"log"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"golang.org/x/crypto/ssh"
+	"golang.org/x/term"
 )
 
 type SshConfig struct {
@@ -52,6 +55,22 @@ func SshConnect() {
 	session.Stdout = os.Stdout
 	session.Stderr = os.Stderr
 	session.Stdin = os.Stdin
+
+	// 获取当前终端状态
+	oldState, err := term.MakeRaw(int(os.Stdin.Fd()))
+	if err != nil {
+		log.Fatalf("Failed to set terminal to raw mode: %s", err)
+	}
+	defer term.Restore(int(os.Stdin.Fd()), oldState) // 在退出时恢复终端状态
+
+	// 捕获 Ctrl+C 等信号以安全退出
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-sigChan
+		term.Restore(int(os.Stdin.Fd()), oldState) // 恢复终端状态
+		os.Exit(0)
+	}()
 
 	// 启动交互式 Shell
 	err = session.Shell()
